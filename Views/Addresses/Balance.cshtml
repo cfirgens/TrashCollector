@@ -1,0 +1,38 @@
+﻿@model TrashCollector.Models.Customer
+
+    @{
+        ViewBag.Title = "Balance";
+    }
+
+    <h2>Balance</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Balance)
+            </th>
+
+            <th></th>
+        </tr>       
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Balance)
+            </td>
+
+        </tr>
+        
+
+    </table>

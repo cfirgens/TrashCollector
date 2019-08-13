@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Firgens Corp Trash Collection</h1>
+    <p class="lead">Welcome to Firgens Corp Trash Collection. </p>
+    <p>
+        @Html.ActionLink(
+            "Sign Up",                                                  // linkText
+            "Register",                                    // actionName
+            "Account",                                                   // controllerName
+            null,                                                     // routeValues
+            new                                                     // htmlAttributes
+            {
+                @class = "btn btn-primary btn-lg"
+            }
+        )
+
+        @Html.ActionLink(
+            "Log In",                                                  // linkText
+            "LogIn",                                    // actionName
+            "Account",                                                   // controllerName
+            null,                                                     // routeValues
+            new                                                     // htmlAttributes
+            {
+                @class = "btn btn-success btn-lg"
+            }
+        )
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Wisconsin Service</h2>
+        <p>If you have a zip code in Wisconsin, we can pick up your trash! </p>
+        <p><a class="btn btn-default" href="#">Learn More</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Pick Your Pickup Day</h2>
+        <p>You choose when your trash is picked up, and how many different addresses!</p>
+        <p><a class="btn btn-default" href="#">Learn More</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Pay Online</h2>
+        <p>Pay convinently online with PayPal! Pay when your balance is due or set up auto-payment!</p>
+        <p><a class="btn btn-default" href="#">Learn More</a></p>
+    </div>
+</div>

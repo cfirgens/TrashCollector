@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TrashCollector.Models.Address>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Addresses Today</h2>
+<br />
+<br />
+<div class="jumbotron">
+    <p>Big ole google maps of all address here</p>
+</div>
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="col-4 d-inline-block" style="width: 33%;">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header"> google map goes here!</div>
+        </div>
+        <div class="card-body">
+
+            @Html.DisplayFor(modelItem => item.StreetAddress)<br />
+
+            @Html.DisplayFor(modelItem => item.City),
+
+            @Html.DisplayFor(modelItem => item.State)
+
+            @Html.DisplayFor(modelItem => item.ZipCode)
+            @if(item.PickedUp == true)
+            {<p> Picked up already!</p>
+                @Html.DisplayFor(modelItem=> item.PickedUp)
+            }
+
+
+
+            <br /><br />
+            <button type="button" class="btn btn-outline-primary">
+                @Html.ActionLink("Mark As Complete", "Edit", new { id = item.AddressId })
+            </button>
+        </div>
+    </div>
+}

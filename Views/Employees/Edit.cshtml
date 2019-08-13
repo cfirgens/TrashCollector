@@ -1,0 +1,99 @@
+﻿@model TrashCollector.Models.Address
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Are you sure you want to confirm pick up for the following pick up?</h2>
+
+
+@using (Html.BeginForm())
+{
+<div>
+    <h4>Addresses</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pickUpDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pickUpDay)
+        </dd>
+        @if (Model.vacationStart != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.vacationStart)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.vacationStart)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.vacationEnd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.vacationEnd)
+            </dd>
+        }
+        @if (Model.SingleDate != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.SingleDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SingleDate)
+            </dd>
+        }
+
+    </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Confirm" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to Pick-ups", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
